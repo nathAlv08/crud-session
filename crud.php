@@ -26,6 +26,15 @@ if (isset($_GET['lihat'])) {
     }
 }
 
+if (isset($_GET['hapus'])) {
+    $index = (int)$_GET['hapus'];
+    if (isset($_SESSION['alltugas'][$index])) {
+        unset($_SESSION['alltugas'][$index]);
+        $_SESSION['alltugas'] = array_values($_SESSION['alltugas']); 
+    }
+    header('Location: ' . $_SERVER['SCRIPT_NAME']);
+    exit;
+}
 
 
 ?>
