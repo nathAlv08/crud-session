@@ -16,6 +16,17 @@ if (isset($_POST['tambah'])) {
 }
 
 
+$selectedTugas = null;
+if (isset($_GET['lihat'])) {
+    $index = (int)$_GET['lihat'];
+    if (isset($_SESSION['alltugas'][$index])) {
+        $selectedTugas = $_SESSION['alltugas'][$index];
+    } else {
+        $selectedTugas = ['tugas' => 'Tugas tidak ditemukan', 'waktu' => 'N/A'];
+    }
+}
+
+
 
 ?>
 
