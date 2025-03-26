@@ -1,3 +1,26 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['alltugas'])) {
+    $_SESSION['alltugas'] = [];
+}
+
+if (isset($_POST['tambah'])) {
+    $tugas = $_POST['tugas'];
+    $waktu = $_POST['waktu'];
+    if (!empty($tugas) && !empty($waktu)) {
+        $_SESSION['alltugas'][] = ['tugas' => $tugas, 'waktu' => $waktu];
+    }
+    header('Location: ' . $_SERVER['SCRIPT_NAME']);
+    exit;
+}
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
