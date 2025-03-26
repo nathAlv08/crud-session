@@ -73,7 +73,7 @@ if (isset($_POST['edit'])) {
     <ol>
         <?php foreach ($_SESSION['alltugas'] as $index => $tugas): ?>
             <li>
-                <?= htmlspecialchars($tugas['tugas']) ?> - <?= htmlspecialchars($tugas['time']) ?>
+                <?= htmlspecialchars($tugas['tugas']) ?> - <?= htmlspecialchars($tugas['waktu']) ?>
                 <a href="?lihat=<?= $index ?>">[Lihat]</a>
                 <a href="?hapus=<?= $index ?>" onclick="return confirm('Hapus tugas ini?');">[Hapus]</a>
                 <form method="POST" style="display:inline;">
