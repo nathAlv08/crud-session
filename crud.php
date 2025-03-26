@@ -6,14 +6,12 @@
 <body>
     <h1>Manajemen List Tugas</h1>
     
-    <!-- Form Tambah Tugas -->
     <form method="POST">
         <input type="text" name="tugas" placeholder="Masukkan tugas" required>
         <input type="text" name="waktu" placeholder="Waktu yang diperlukan" required>
         <button type="submit" name="tambah">Tambah</button>
     </form>
     
-    <!-- Menampilkan Daftar Tugas -->
     <h2>Daftar Tugas</h2>
     <ol>
         <?php foreach ($_SESSION['alltugas'] as $index => $tugas): ?>
@@ -31,7 +29,6 @@
         <?php endforeach; ?>
     </ol>
     
-    <!-- Menampilkan Detail Tugas -->
     <?php if ($selectedTugas): ?>
         <h2>Detail Tugas</h2>
         <p><strong>Tugas:</strong> <?= htmlspecialchars($selectedTugas['tugas']) ?></p>
