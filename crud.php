@@ -36,6 +36,20 @@ if (isset($_GET['hapus'])) {
     exit;
 }
 
+if (isset($_POST['edit'])) {
+    $index = (int)$_POST['index'];
+    $newTugas = trim($_POST['tugas']);
+    $newWaktu = trim($_POST['waktu']);
+    if (isset($_SESSION['alltugas'][$index])) {
+        if (!empty($newTugas) && !empty($newWaktu)) {
+            $_SESSION['alltugas'][$index] = ['tugas' => $newTugas, 'waktu' => $newWaktu];
+            header('Location: ' . $_SERVER['SCRIPT_NAME'] . '?lihat=' . $index);
+            exit;
+        } else {
+            echo "<script>alert('Tugas dan waktu tidak boleh kosong!');</script>";
+        }
+    }
+}
 
 ?>
 
